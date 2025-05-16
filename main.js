@@ -145,7 +145,7 @@ document.getElementById('download-selected-btn').onclick = async () => {
 // --- PDF Extraction ---
 async function extractPagesAsPDF(pageIndices) {
   // Use PDF-lib for page extraction (browser compatible)
-  const { PDFDocument } = await import('https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js');
+  const PDFDocument = window.PDFLib.PDFDocument;
   const srcPdf = await PDFDocument.load(pdfFileBuffer);
   const newPdf = await PDFDocument.create();
   for (const idx of pageIndices) {
